@@ -31,6 +31,17 @@
         android:icon="@*android:drawable/ic_menu_allfriends"
         android:title="@string/menu_displayGroup" />
 
+    <!--Geesun Add -->
+    <item
+        android:id="@+id/menu_settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/menu_setting" />
+
+    <item
+        android:id="@+id/oper_settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/oper_setting" />
+
     <item
         android:id="@+id/menu_accounts"
         android:icon="@drawable/ic_menu_account_list"

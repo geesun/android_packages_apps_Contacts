@@ -74,36 +74,7 @@
                     android:defaultValue="-1" />
         </PreferenceScreen>
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/recentCallsIconLabel">
-        <CheckBoxPreference
-            android:key="cl_show_dial_button"
-            android:title="@string/title_contacts_show_dial_button"
-            android:summary="@string/summary_contacts_show_dial_button"
-            android:defaultValue="false" />
-        <CheckBoxPreference
-            android:key="cl_show_pic"
-            android:title="@string/title_contacts_show_pic"
-            android:defaultValue="true" />
-        <CheckBoxPreference
-            android:key="cl_exact_time"
-            android:title="@string/title_cl_exact_time"
-            android:summaryOn="@string/summaryon_cl_exact_time"
-            android:summaryOff="@string/summaryoff_cl_exact_time"
-            android:disableDependentsState="false"
-            android:defaultValue="true" />
-        <CheckBoxPreference
-            android:key="cl_show_seconds"
-            android:title="@string/title_cl_show_seconds"
-            android:summary="@string/summary_cl_show_seconds"
-            android:dependency="cl_exact_time"
-            android:defaultValue="true" />
-        <CheckBoxPreference
-            android:key="cl_ask_before_clear"
-            android:title="@string/title_cl_ask_before_clear"
-            android:summaryOn="@string/summaryon_cl_ask_before_clear"
-            android:summaryOff="@string/summaryoff_cl_ask_before_clear"
-            android:defaultValue="false" />
-    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/contactsIconLabel">
         <CheckBoxPreference
             android:key="contacts_show_dial_button"
@@ -168,6 +139,11 @@
             android:title="@string/title_sensor_rotation"
             android:summary="@string/summary_sensor_rotation"
             android:defaultValue="false" />
+         <CheckBoxPreference android:defaultValue="true"
+            android:key="pref_key_display_city"
+            android:summary="@string/pref_summary_display_city"
+            android:title="@string/pref_title_display_city" />
+
         <ListPreference
             android:key="misc_data_font_size"
             android:title="@string/title_data_font_size"

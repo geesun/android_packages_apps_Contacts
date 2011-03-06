@@ -471,5 +471,9 @@
             </intent-filter>
         </activity>
     
+        <!-- Geesun -->
+     <activity android:name=".AdvContactsOperation"
+                  android:label="@string/oper_setting_title"                  
+                  />
     </application>
 </manifest>

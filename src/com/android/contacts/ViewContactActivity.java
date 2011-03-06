@@ -100,6 +100,11 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import java.util.List;
+//Geesun
+import com.android.contacts.location.PhoneNumProcess;
+import com.android.phone.location.PhoneLocation;
+import com.android.contacts.location.LocationPreference;
 
 /**
  * Displays the details of a specific contact.
@@ -589,7 +594,11 @@ public class ViewContactActivity extends Activity
         ViewEntry entry = ContactEntryAdapter.getEntry(mSections, info.position, SHOW_SEPARATORS);
         menu.setHeaderTitle(R.string.contactOptionsTitle);
         if (entry.mimetype.equals(CommonDataKinds.Phone.CONTENT_ITEM_TYPE)) {
-            menu.add(0, MENU_ITEM_CALL, 0, R.string.menu_call).setIntent(entry.intent);
+        	//Geesun
+            Intent dirCallIntent = new Intent(Intent.ACTION_CALL_PRIVILEGED,
+                    Uri.fromParts("tel", entry.data, null));
+        	menu.add(0, 0, 0, R.string.call_direct).setIntent(dirCallIntent);
+            menu.add(0, 0, 0, R.string.menu_call).setIntent(entry.intent);
             menu.add(0, 0, 0, R.string.menu_sendSMS).setIntent(entry.secondaryIntent);
             if (!entry.isPrimary) {
                 menu.add(0, MENU_ITEM_MAKE_DEFAULT, 0, R.string.menu_makeDefaultNumber);
@@ -982,8 +991,15 @@ public class ViewContactActivity extends Activity
                         // Build phone entries
                         mNumPhoneNumbers++;
 
+                        //Geesun 
+                        String number = entry.data;
+                        PhoneNumProcess  process = new PhoneNumProcess(/*getApplicationContext()*/this,number);
+                        process.displayPhoneLocation();
+                        String phoneNum =process.getPhoneWithIp();
+                        
                         entry.intent = new Intent(Intent.ACTION_CALL_PRIVILEGED,
-                                Uri.fromParts(Constants.SCHEME_TEL, entry.data, null));
+                                Uri.fromParts(Constants.SCHEME_TEL, /*entry.data*/phoneNum, null));
+                        
                         entry.secondaryIntent = new Intent(Intent.ACTION_SENDTO,
                                 Uri.fromParts(Constants.SCHEME_SMSTO, entry.data, null));
 
@@ -1284,6 +1300,9 @@ public class ViewContactActivity extends Activity
         public ImageView primaryIcon;
         public ImageView secondaryActionButton;
         public View secondaryActionDivider;
+        
+        //Geesun
+        public TextView city;
 
         // Need to keep track of this too
         ViewEntry entry;
@@ -1334,6 +1353,8 @@ public class ViewContactActivity extends Activity
                 float fontSize = Float.parseFloat(ePrefs.getString("misc_data_font_size", "14"));
                 views.data.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontSize);
 
+                //Geesun
+                views.city = (TextView) v.findViewById(R.id.city);
                 v.setTag(views);
             }
 
@@ -1370,7 +1391,22 @@ public class ViewContactActivity extends Activity
                 } else {
                     data.setText(entry.data);
                 }
-                setMaxLines(data, entry.maxLines);
+                setMaxLines(data, entry.maxLines);              
+                
+                //Geesun 
+                //Set City info               
+                if(entry.mimetype.equals(Phone.CONTENT_ITEM_TYPE)){
+                    LocationPreference  locPref = new LocationPreference(mContext);
+                    if(locPref.isCityDisplay()){
+                        String city = PhoneLocation.getCityFromPhone(entry.data);                	
+                        if(city != null){
+                            views.city.setText("("+city+")");
+                            views.city.setVisibility(View.VISIBLE);
+                        }
+                    }
+                }else{
+                	views.city.setVisibility(View.GONE);
+                }
             }
 
             // Set the footer

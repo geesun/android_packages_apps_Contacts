@@ -144,6 +144,9 @@ import android.preference.PreferenceManager;
  * brought back in as we add back that functionality.
  */
 
+//Geesun 
+import com.android.contacts.location.PhoneNumProcess;
+import com.android.contacts.location.LocationPreference;
 /**
  * Displays a list of contacts. Usually is embedded into the ContactsActivity.
  */
@@ -1311,6 +1314,18 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                 startActivity(intent);
                 return true;
             }
+            //Geesun
+            case R.id.menu_settings:{
+                LocationPreference preference = new LocationPreference(/*getApplicationContext()*/this);
+                preference.showSettingPrefer(this);
+                return true;
+            }
+            case R.id.oper_settings:{
+                Intent intent = new Intent(this, AdvContactsOperation.class);
+                startActivity(intent);                       
+                return true;
+            }
+
             case R.id.menu_import_export: {
                 displayImportExportDialog();
                 return true;
@@ -1997,7 +2012,12 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                 }
 
                 // Make the URI a direct tel: URI so that it will always continue to work
-                Uri phoneUri = Uri.fromParts(scheme, number, null);
+                // Geesun
+                PhoneNumProcess process = new PhoneNumProcess(/*getApplicationContext()*/this,number);
+                process.displayPhoneLocation();
+                String phoneNum =process.getPhoneWithIp();
+
+                Uri phoneUri = Uri.fromParts(scheme, phoneNum, null);
                 shortcutIntent = new Intent(mShortcutAction, phoneUri);
 
                 intent.putExtra(Intent.EXTRA_SHORTCUT_ICON,
@@ -2761,7 +2781,12 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                         ContactsUtils.initiateSms(this, phone);
                     } else {
                         StickyTabs.saveTab(this, getIntent());
-                        ContactsUtils.initiateCall(this, phone);
+                        //Geesun
+	                PhoneNumProcess process = new PhoneNumProcess(/*getApplicationContext()*/this,phone);
+	                process.displayPhoneLocation();
+                    String phoneNum =process.getPhoneWithIp();
+                        ContactsUtils.initiateCall(this, phoneNum);
+                    
                     }
                 }
                 // Close the phoneCursor after its use

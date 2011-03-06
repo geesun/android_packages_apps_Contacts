@@ -1130,28 +1130,28 @@
 
     <!-- Text describing that a contact has no information available other than name and photo -->
     <string name="no_contact_details">No additional information for this contact</string>
-
+    
     <!-- Label of the "sort list by" display option -->
     <string name="display_options_sort_list_by">Sort list by</string>
-
+    
     <!-- An allowable value for the "sort list by" contact display option  -->
     <string name="display_options_sort_by_given_name">Given name</string>
-
+    
     <!-- An allowable value for the "sort list by" contact display option  -->
     <string name="display_options_sort_by_family_name">Family name</string>
-
+           
     <!-- Label of the "view names as" display option -->
     <string name="display_options_view_names_as">View contact names as</string>
-
+    
     <!-- An allowable value for the "view names as" contact display option  -->
     <string name="display_options_view_given_name_first">Given name first</string>
-
+    
     <!-- An allowable value for the "view names as" contact display option  -->
     <string name="display_options_view_family_name_first">Family name first</string>
-
+    
     <!-- Gray hint displayed in the search field in Contacts when empty -->
     <string name="search_bar_hint">Search contacts</string>
-
+    
     <!-- Button displayed underneath the list of filtered visible contacts -->
     <string name="search_for_all_contacts">Search for all contacts</string>
 
@@ -1281,4 +1281,27 @@
     <string name="title_about_credits">Credits</string>
     <string name="summary_about_credits">Wysie, ChainsDD, geesun, niuchl, rac2030, sileht and the rest of XDA! :)</string>
     
+    <!-- Geesun Add -->
+        <!-- Confirmation dialog contents after users selects to delete a contact. -->
+    <string name="deleteCallLogConfirmation">This call log will be deleted.</string>
+    <string name="menu_setting">Ip Dailer Setting</string>    
+    <string name="title_setting">Setting Preference</string>    
+    <string name="save">Save</string>    
+    <string name="this_phone_num">Your Phone Number or Your region code:</string>
+    <string name="prefix">IP Dailer Prefix:</string>
+    <string name="setting_email">Support Website:http://www.gfan.com</string>
+    <string name="setting_result">"My Location:  <xliff:g id="loc">%s</xliff:g>\nIP Dailer Prefix:  <xliff:g id="ip">%s</xliff:g> "</string>
+    <string name="unknow_city">Local City </string>
+    <string name="ip_dailer_enable">Enable IP Dailer </string>
+    <string name="your_city">Your City : %s </string>
+   <string name="call_direct">Call Direct</string>
+   <string name="menu_ip_dailer">Ip Dailer</string>
+   <string name="selectAll" > Select All</string>
+    <string name="contacts_deleting">Contacts Delete ...</string>
+    <string name="type_this_phone_num">Your Phone Number/Region Code</string>
+     <string name="type_prefix">Your IP Dailer Prefix</string>
+     <string name="oper_setting">Contacts operation</string>
+     <string name="oper_setting_title">Contacts operation</string>
+        <string name="pref_summary_display_city">Display city information, need restart this application</string>   
+   <string name="pref_title_display_city">Enable display city</string>   
 </resources>

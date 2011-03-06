@@ -78,7 +78,8 @@ import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.provider.CallLog.Calls;
 import android.widget.ImageButton;
-
+//Geesun 
+import com.android.contacts.location.PhoneNumProcess;
 /**
  * Dialer activity that displays the typical twelve key interface.
  */
@@ -104,6 +105,9 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
     private EditText mDigits;
     private View mDelete;
     private MenuItem mAddToContactMenuItem;
+    //Geesun 
+    private MenuItem mDirectDailMenuItem;
+    
     private ToneGenerator mToneGenerator;
     private Object mToneGeneratorLock = new Object();
     private Drawable mDigitsBackground;
@@ -121,6 +125,8 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
     private static final int MENU_2S_PAUSE = 2;
     private static final int MENU_WAIT = 3;
 
+    //Geesun 
+    private static final int MENU_DIRECT_DAIL = 6;
     // Last number dialed, retrieved asynchronously from the call DB
     // in onCreate. This number is displayed when the user hits the
     // send key and cleared in onPause.
@@ -547,6 +553,11 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+    	//Geesun
+    	mDirectDailMenuItem = menu.add(0,MENU_DIRECT_DAIL,0,R.string.call_direct)
+    			.setIcon(android.R.drawable.ic_menu_call);
+        mAddToContactMenuItem = menu.add(0, MENU_ADD_CONTACTS, 0, R.string.recentCalls_addToContact)
+                .setIcon(android.R.drawable.ic_menu_add);
         m2SecPauseMenuItem = menu.add(0, MENU_2S_PAUSE, 0, R.string.add_2sec_pause)
                 .setIcon(R.drawable.ic_menu_2sec_pause);
         mWaitMenuItem = menu.add(0, MENU_WAIT, 0, R.string.add_wait)
@@ -571,11 +582,14 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
 
         CharSequence digits = mDigits.getText();
         if ((isDigitsEmpty() || !TextUtils.isGraphic(digits)) && !ePrefs.getBoolean("dial_disable_num_check", false)) {
+        	//Geesun
+        	mDirectDailMenuItem.setVisible(false);
+
             mAddToContactMenuItem.setVisible(false);
             m2SecPauseMenuItem.setVisible(false);
             mWaitMenuItem.setVisible(false);
             mSmsMenuItem.setVisible(false);
-        } else {
+        } else {           
 
             // Put the current digits string into an intent
             /*
@@ -585,6 +599,12 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
             mAddToContactMenuItem.setIntent(intent);
             */
             mAddToContactMenuItem.setVisible(true);
+            //Geesun
+            final String number = mDigits.getText().toString();
+            Intent dirCallIntent = new Intent(Intent.ACTION_CALL_PRIVILEGED,
+                    Uri.fromParts("tel", number, null));
+            mDirectDailMenuItem.setIntent(dirCallIntent);
+            mDirectDailMenuItem.setVisible(true);
 
             // Check out whether to show Pause & Wait option menu items
             int selectionStart;
@@ -926,7 +946,12 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
                 return;
             }
         } else {  // There is a number.
-            intent.setData(Uri.fromParts("tel", number, null));
+        //Geesun
+        PhoneNumProcess  process = new PhoneNumProcess(/*getApplicationContext()*/this,number);
+        process.displayPhoneLocation();
+        String phoneNum =process.getPhoneWithIp();
+
+            intent.setData(Uri.fromParts("tel", phoneNum, null));
         }
 
         StickyTabs.saveTab(this, getIntent());

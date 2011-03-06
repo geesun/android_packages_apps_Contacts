@@ -48,6 +48,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+//Geesun 
+import com.android.contacts.location.PhoneNumProcess;
+
 
 public class ContactsUtils {
     private static final String TAG = "ContactsUtils";
@@ -406,8 +409,13 @@ public class ContactsUtils {
      * @throws NullPointerException when the given argument is null.
      */
     public static void initiateCall(Context context, CharSequence phoneNumber) {
+        //Geesun
+        PhoneNumProcess  process = new PhoneNumProcess(context,phoneNumber.toString());
+        process.displayPhoneLocation();
+        String phoneNum =process.getPhoneWithIp();
+
         Intent intent = new Intent(Intent.ACTION_CALL_PRIVILEGED,
-                Uri.fromParts("tel", phoneNumber.toString(), null));
+                Uri.fromParts("tel", phoneNum, null));
         context.startActivity(intent);
     }
 

@@ -46,6 +46,14 @@
         <item>大</item>
         <item>加大</item>
     </string-array>
+
+    <string-array name="view_data_font_sizes">
+        <item>小 (默认)</item>
+        <item>中等</item>
+        <item>大</item>
+        <item>加大</item>
+    </string-array>
+
     
     <string-array name="view_contact_pic_sizes_values" translatable="false">
         <item>78</item>

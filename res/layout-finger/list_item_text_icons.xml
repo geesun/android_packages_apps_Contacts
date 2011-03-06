@@ -66,6 +66,16 @@
 
         </LinearLayout>
 
+                    <!--Geesun Add -->
+            <TextView android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|left"
+                />
+
         <TextView
             android:id="@+id/footer"
             android:layout_width="wrap_content"

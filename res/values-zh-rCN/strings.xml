@@ -41,7 +41,6 @@
     <string name="menu_removeStar" msgid="5844227078364227030">"从收藏中删除"</string>
     <string name="menu_editContact" msgid="3452858480713561396">"编辑联系人"</string>
     <string name="menu_deleteContact" msgid="1916555454274101750">"删除联系人"</string>
-    <string name="menu_call" msgid="3992595586042260618">"呼叫联系人"</string>
     <string name="menu_sendSMS" msgid="5535886767547006515">"向联系人发送短信"</string>
     <string name="menu_sendEmail" msgid="7293508859242926187">"发送电子邮件"</string>
     <string name="menu_viewAddress" msgid="1814744325763202024">"地图地址"</string>
@@ -140,7 +139,6 @@
     <string name="liveFolderFavorites" msgid="3100957542927222282">"已加星标的联系人"</string>
     <string name="liveFolderPhone" msgid="3739376066610926780">"有电话号码的联系人"</string>
     <string name="menu_sendTextMessage" msgid="6937343460284499306">"发送短信"</string>
-    <string name="recentCalls_callNumber" msgid="1756372533999226126">"呼叫<xliff:g id="NAME">%s</xliff:g>"</string>
     <string name="recentCalls_editNumberBeforeCall" msgid="7756171675833267857">"呼叫之前编辑号码"</string>
     <string name="recentCalls_addToBlacklist">加入黑名单</string>
     <string name="recentCalls_addToContact" msgid="1429899535546487008">"添加到“联系人”"</string>
@@ -476,11 +474,48 @@
     <string name="title_misc_category">其他设定</string>
     <string name="title_sensor_rotation">使用重力感应</string>
     <string name="summary_sensor_rotation">如果允许该项，拨号面板将会根据设定旋转方向"</string>
+
+    <string name="title_data_font_size">联系人信息字体大小</string>
+    <string name="summary_data_font_size">允许您更改联系人详细信息字体大小(电话号码，邮件，地址等.)</string>
     
     <!-- Wysie: About strings -->
     <string name="title_about">关于</string>
     <string name="title_about_name">插件名称</string>
     <string name="title_about_version">版本</string>
     <string name="title_about_credits">感谢</string>
+   <!-- Geesun Add -->
+    <string name="deleteCallLogConfirmation">确定删除此通话记录.</string>
+    <string name="menu_setting">智能拨号设置</string>    
+    <string name="title_setting">智能拨号设置</string>    
+    <string name="save">保存</string>    
+    <string name="this_phone_num">手机(前七位)号码或者区号:</string>
+    <string name="prefix">自动IP拨号前缀:</string>
+    <string name="setting_email">如果您有更好的意见及建议,欢迎访问\nhttp://www.androidin.net\n</string>    
+    <string name="setting_result">你所在城市:  <xliff:g id="loc">%s</xliff:g>\n自动IP拨号前缀:  <xliff:g id="ip">%s</xliff:g> </string>
+    <string name="unknow_city">本地城市</string>
+    <string name="ip_dailer_enable">开启智能IP拨号</string>
+    <string name="your_city">你所在城市 : %s </string>
+     <string name="call_direct">直接呼叫</string>
+    <string name="menu_call" msgid="7359207953236681606">"智能IP呼叫"</string>
+    <string name="recentCalls_callNumber" msgid="1756372533999226126">"智能IP呼叫<xliff:g id="NAME">%s</xliff:g>"</string>
+    <string name="menu_ip_dailer">智能拨号设置</string>
+    <string name="selectAll" >选择全部</string>
+    <string name="contacts_deleting">联系人删除中 ...</string>
+    <string name="type_this_phone_num">请输入手机号码或者区号</string>
+    <string name="type_prefix">请输入智能IP拨号前缀</string>
+    <string name="oper_setting">批量删除</string>
+    <string name="oper_setting_title">批量删除联系人</string>
+    <string name="pref_summary_display_city">根据号码,显示所在城市. 此设置改变要重启本程序才能生效</string>   
+    <string name="pref_title_display_city">开启显示城市</string>  
+
+
+    <!-- Menu item used to share the plain-text representation of a specific phone number -->
+    <string name="menu_shareNumber">共享号码</string>
+
+    <!-- Menu item used to share the plain-text representation of a specific email address -->
+    <string name="menu_shareEmail">共享邮件</string>
+
+    <!-- Menu item used to share the plain-text representation of a specific address -->
+    <string name="menu_shareAddress">共享地址</string>
 
 </resources>
