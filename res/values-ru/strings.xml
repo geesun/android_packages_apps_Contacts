@@ -142,6 +142,7 @@
     <string name="menu_sendTextMessage" msgid="6937343460284499306">"Отправить SMS"</string>
     <string name="recentCalls_callNumber" msgid="1756372533999226126">"Вызов: <xliff:g id="NAME">%s</xliff:g>"</string>
     <string name="recentCalls_editNumberBeforeCall" msgid="7756171675833267857">"Изменить номер и вызвать"</string>
+    <string name="recentCalls_addToBlacklist">Добавить в чёрный список</string>
     <string name="recentCalls_addToContact" msgid="1429899535546487008">"Добавить в контакты"</string>
     <string name="recentCalls_removeFromRecentList" msgid="401662244636511330">"Удалить из списка вызовов"</string>
     <string name="recentCalls_deleteAll" msgid="6352364392762163704">"Очистить список вызовов"</string>
@@ -456,6 +457,18 @@
     <string name="summary_sensor_rotation">Если включено,он будет вращаться как настроено в системе</string>   
     <string name="title_data_font_size">Размер шрифта информации о контакте</string>
     <string name="summary_data_font_size">Выбор размера шрифта в подробной информации о контакте (телефонный номер, эл. почта, адрес и т.д.)</string>
+
+    <string name="title_default_phone_tab">Вкладка по умолчанию</string>
+    <string name="summary_default_phone_tab">Вкладка по умочанию при запуске приложения \"Телефон\"</string>
+
+    <!-- Default Phone Tab strings -->
+    <string name="default_phone_tab_last_used">Последняя используемая (По умолчанию)</string>
+    <string name="default_phone_tab_last_viewed">Последняя просмотренная</string>
+    <string name="default_phone_tab_phone">Кнопки</string>
+    <string name="default_phone_tab_call_log">Вызов</string>
+    <string name="default_phone_tab_contacts">Контакты</string>
+    <string name="default_phone_tab_favorites">Избранное</string>
+
     <string name="title_about">О программе</string>
     <string name="title_about_name">Имя модификации</string>
     <string name="summary_about_name">WyContacts Froyo</string>

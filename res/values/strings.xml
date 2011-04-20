@@ -1210,8 +1210,8 @@
     <!-- Wysie: Preferences strings -->
     
     <!-- Preferences: Dialer -->
-    <string name="title_last_dialled">Call button retrieves last dialled number</string>
-    <string name="summary_last_dialled">Last dialled number will be retrieved if digits are empty</string>
+    <string name="title_last_dialled">Call button retrieves last dialed number</string>
+    <string name="summary_last_dialled">Last dialed number will be retrieved if digits are empty</string>
     <string name="title_return_to_dialer">Return to dialer after call</string>
     <string name="title_vm_button">Left action button (LAB)</string>
     <string name="title_vm_handler">Voicemail handler</string>
@@ -1271,6 +1271,16 @@
     <string name="summary_sensor_rotation">If enabled, it will rotate based on system\'s settings"</string>
     <string name="title_data_font_size">Contact info font size</string>
     <string name="summary_data_font_size">Allows you to choose the size of the font used to display detailed contact information (phone number, email, address, etc.)</string>
+    <string name="title_default_phone_tab">Default tab</string>
+    <string name="summary_default_phone_tab">Default tab to open when launching the Phone app</string>
+
+    <!-- Default Phone Tab strings -->
+    <string name="default_phone_tab_last_used">Last used to make a call (Default)</string>
+    <string name="default_phone_tab_last_viewed">Last viewed</string>
+    <string name="default_phone_tab_phone">Phone</string>
+    <string name="default_phone_tab_call_log">Call log</string>
+    <string name="default_phone_tab_contacts">Contacts</string>
+    <string name="default_phone_tab_favorites">Favorites</string>
     
     <!-- Wysie: About strings -->    
     <string name="title_about">About</string>
