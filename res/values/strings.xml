@@ -1289,29 +1289,37 @@
     <string name="title_about_version">Version</string>
     <string name="summary_about_version">1.2</string>
     <string name="title_about_credits">Credits</string>
-    <string name="summary_about_credits">Wysie, ChainsDD, geesun, niuchl, rac2030, sileht and the rest of XDA! :)</string>
+    <string name="summary_about_credits">Wysie, ChainsDD, Geesun Xu, niuchl, rac2030, sileht and the rest of XDA! :)</string>
     
     <!-- Geesun Add -->
-        <!-- Confirmation dialog contents after users selects to delete a contact. -->
+    <!-- Confirmation dialog contents after users selects to delete a contact. -->
     <string name="deleteCallLogConfirmation">This call log will be deleted.</string>
-    <string name="menu_setting">Ip Dailer Setting</string>    
-    <string name="title_setting">Setting Preference</string>    
-    <string name="save">Save</string>    
-    <string name="this_phone_num">Your Phone Number or Your region code:</string>
-    <string name="prefix">IP Dailer Prefix:</string>
-    <string name="setting_email">Support Website:http://www.gfan.com</string>
-    <string name="setting_result">"My Location:  <xliff:g id="loc">%s</xliff:g>\nIP Dailer Prefix:  <xliff:g id="ip">%s</xliff:g> "</string>
-    <string name="unknow_city">Local City </string>
-    <string name="ip_dailer_enable">Enable IP Dailer </string>
-    <string name="your_city">Your City : %s </string>
+  
+   <string name="selectAll" > Select All</string>
+   <string name="contacts_deleting">Contacts Delete ...</string>
+
+   <string name="type_prefix">Your IP Dailer Prefix</string>
+   <string name="oper_setting">Contacts operation</string>
+   <string name="oper_setting_title">Contacts operation</string>
+   
+   <string name="type_this_phone_num">Your Phone Number/Region Code</string>
+   <string name="your_city">Your City : %s </string>
    <string name="call_direct">Call Direct</string>
    <string name="menu_ip_dailer">Ip Dailer</string>
-   <string name="selectAll" > Select All</string>
-    <string name="contacts_deleting">Contacts Delete ...</string>
-    <string name="type_this_phone_num">Your Phone Number/Region Code</string>
-     <string name="type_prefix">Your IP Dailer Prefix</string>
-     <string name="oper_setting">Contacts operation</string>
-     <string name="oper_setting_title">Contacts operation</string>
-        <string name="pref_summary_display_city">Display city information, need restart this application</string>   
-   <string name="pref_title_display_city">Enable display city</string>   
+  
+   <string name="prefix">IP Dailer Prefix:</string> 
+  <string name="this_phone_num">Your Phone Number or Your region code:</string> 
+  <string name="setting_email">Support E-mail:\nGeesun@gmail.com</string>
+  <string name="setting_result">"My Location:  <xliff:g id="loc">%s</xliff:g>\nIP Dailer Prefix:  <xliff:g id="ip">%s</xliff:g> "</string>
+  <string name="unknow_city">Unknow City</string>
+    
+   <string name="pref_summary_display_city">Display city information, need restart this application</string>   
+   <string name="pref_title_display_city">Enable display city</string> 
+    
+   <string name="pref_summary_ipdailer">Enable/Disable IP Dailer</string>   
+   <string name="pref_title_ipdailer">IP Dailer</string>  
+   <string name="pref_title_ipdailer_setting">IP Dailer Setting</string> 
+   <string name="pref_summary_ipdailer_setting">Setting the your local code and IP prefix</string>
+   <string name="no_city_and_enable_all">Not found your city, Add prefix for all calls</string>  
+    
 </resources>

@@ -1314,12 +1314,6 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                 startActivity(intent);
                 return true;
             }
-            //Geesun
-            case R.id.menu_settings:{
-                LocationPreference preference = new LocationPreference(/*getApplicationContext()*/this);
-                preference.showSettingPrefer(this);
-                return true;
-            }
             case R.id.oper_settings:{
                 Intent intent = new Intent(this, AdvContactsOperation.class);
                 startActivity(intent);                       

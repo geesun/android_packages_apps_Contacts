@@ -18,11 +18,13 @@ package com.android.contacts;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.DialogPreference;
 import android.preference.Preference;
 import android.preference.ListPreference;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceActivity;
 import 	android.preference.PreferenceScreen;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.content.Intent;
@@ -42,11 +44,16 @@ public class ContactsPreferences extends PreferenceActivity implements Preferenc
     private static final String FOCUSED_DIGIT_COLOR = "focused_digits_color";
     private static final String UNSELECTED_DIGIT_COLOR = "unselected_digits_color";
     private static final String DEFAULT_PHONE_TAB = "misc_default_phone_tab";
+    private static final String IP_DAILER = "dail_with_ip";
+    private static final String IP_DAILER_SETTING = "dail_ip_setting";
 
     private ListPreference mVMButton;
     private ListPreference mVMHandler;
     private ListPreference mDefaultPhoneTab;
     private Preference colorFocused, colorPressed, colorUnselected;
+    private CheckBoxPreference mIpDailer;
+    private DialogPreference   mIpDailerSetting;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +68,17 @@ public class ContactsPreferences extends PreferenceActivity implements Preferenc
         colorPressed = (Preference) findPreference(PRESSED_DIGIT_COLOR);
         colorFocused = (Preference) findPreference(FOCUSED_DIGIT_COLOR);
         colorUnselected = (Preference) findPreference(UNSELECTED_DIGIT_COLOR);
-
+        mIpDailer = (CheckBoxPreference)findPreference(IP_DAILER);
+        mIpDailerSetting = (DialogPreference)findPreference(IP_DAILER_SETTING);
+        IpdailerListener l = new IpdailerListener();
+        mIpDailer.setOnPreferenceChangeListener(l);
+        
+        if(mIpDailer.isChecked()){
+        	mIpDailerSetting.setEnabled(true);
+        }else{
+        	mIpDailerSetting.setEnabled(false);
+        }
+        
         mVMButton.setOnPreferenceChangeListener(this);
         mVMHandler.setOnPreferenceChangeListener(this);
         mDefaultPhoneTab.setOnPreferenceChangeListener(this);
@@ -71,6 +88,23 @@ public class ContactsPreferences extends PreferenceActivity implements Preferenc
         updatePrefs(mVMHandler, mVMHandler.getValue());
         updatePrefs(mDefaultPhoneTab, mDefaultPhoneTab.getValue());
     }    
+    
+    class IpdailerListener implements OnPreferenceChangeListener{
+		@Override
+		public boolean onPreferenceChange(Preference preference, Object newValue) {
+			if(mIpDailer == preference){
+				mIpDailer.setChecked(!mIpDailer.isChecked());
+				
+		        if(mIpDailer.isChecked()){
+		        	mIpDailerSetting.setEnabled(true);
+		        }else{
+		        	mIpDailerSetting.setEnabled(false);
+		        }
+			}
+			return false;
+		}
+    	
+    }
     
     public boolean onPreferenceChange (Preference preference, Object newValue) {
         updatePrefs(preference, newValue);

@@ -490,9 +490,9 @@
     <string name="save">保存</string>    
     <string name="this_phone_num">手机(前七位)号码或者区号:</string>
     <string name="prefix">自动IP拨号前缀:</string>
-    <string name="setting_email">如果您有更好的意见及建议,欢迎访问\nhttp://www.androidin.net\n</string>    
+    <string name="setting_email">如果您有更好的意见及建议,发邮件至：\nGeesun@gmail.com</string>    
     <string name="setting_result">你所在城市:  <xliff:g id="loc">%s</xliff:g>\n自动IP拨号前缀:  <xliff:g id="ip">%s</xliff:g> </string>
-    <string name="unknow_city">本地城市</string>
+    <string name="unknow_city">未知城市</string>
     <string name="ip_dailer_enable">开启智能IP拨号</string>
     <string name="your_city">你所在城市 : %s </string>
      <string name="call_direct">直接呼叫</string>
@@ -508,6 +508,12 @@
     <string name="pref_summary_display_city">根据号码,显示所在城市. 此设置改变要重启本程序才能生效</string>   
     <string name="pref_title_display_city">开启显示城市</string>  
 
+   <string name="pref_summary_ipdailer">开启/关闭智能拨号</string>   
+   <string name="pref_title_ipdailer">智能拨号</string>  
+   <string name="pref_title_ipdailer_setting">智能拨号设置</string> 
+   <string name="pref_summary_ipdailer_setting">设置本地号码和拨号前缀</string>
+   <string name="no_city_and_enable_all">没有找到你所在城市,默认对所有拨号添加前缀</string>  
+    
 
     <!-- Menu item used to share the plain-text representation of a specific phone number -->
     <string name="menu_shareNumber">共享号码</string>

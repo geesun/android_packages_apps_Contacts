@@ -18,6 +18,17 @@
 <PreferenceScreen
         xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/dialerIconLabel">
+    	 <CheckBoxPreference
+            android:key="dail_with_ip"
+            android:title="@string/pref_title_ipdailer"
+            android:summary="@string/pref_summary_ipdailer"
+            android:defaultValue="false" />
+            
+        <com.android.contacts.location.IpDailerPreference
+            android:key="dail_ip_setting"
+            android:title="@string/pref_title_ipdailer_setting"
+            android:summary="@string/pref_summary_ipdailer_setting"
+        />
         <CheckBoxPreference
             android:key="dial_retrieve_last"
             android:title="@string/title_last_dialled"
