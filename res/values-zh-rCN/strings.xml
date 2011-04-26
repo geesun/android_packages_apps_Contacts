@@ -469,6 +469,17 @@
     <string name="title_favs_ask_before_clear">清除时需确认</string>
     <string name="summaryon_favs_ask_before_clear">在清除常用联系人时需要确认</string>
     <string name="summaryoff_favs_ask_before_clear">在清除常用联系人时不需确认</string>
+
+    <string name="title_default_phone_tab">默认标签</string>
+    <string name="summary_default_phone_tab">联系人默认显示标签设置</string>
+
+    <!-- Default Phone Tab strings -->
+    <string name="default_phone_tab_last_used">最后使用来拨打电话的标签（默认）</string>
+    <string name="default_phone_tab_last_viewed">最后打开的标签</string>
+    <string name="default_phone_tab_phone">拨号器</string>
+    <string name="default_phone_tab_call_log">通话记录</string>
+    <string name="default_phone_tab_contacts">联系人</string>
+    <string name="default_phone_tab_favorites">收藏夹</string>
     
     <!-- Preferences: Misc -->
     <string name="title_misc_category">其他设定</string>
